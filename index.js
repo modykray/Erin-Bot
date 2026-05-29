@@ -4,12 +4,14 @@ import UltraDB from "./sys/UltraDB.js";
 import sub from './sub.js';
 
 /* =========== Client ========== */
+const botNumber = "201227812859"; // رقمك الفعلي متسجل هنا كنص ثابت ومضمون
+
 const client = new Client({
-  phoneNumber: '201227812859', // رقمك أنت الفعلي المظبوط دولياً 
+  phoneNumber: String(botNumber), 
   prefix: [".", "/", "!"],
   fromMe: false, 
   owners: [
-    { name: "Erin", jid: "201227812859@s.whatsapp.net" }
+    { name: "Erin", jid: `${botNumber}@s.whatsapp.net` }
   ],
   settings: { noWelcome: false },
   commandsPath: './plugins'
@@ -27,7 +29,7 @@ if (!global.db) {
 const { config } = client;
 config.info = { 
   nameBot: "⚔️ ‌𝖤𝖱𝖨𝖭 𝖡𝖮𝖳 ‌‌🕊️⁩", 
-  nameChannel: "𝐄𝐑𝐈𝐍 ~ 𝐂𝐡𝐚𝐧𝐧𝐞ล ⛓️", 
+  nameChannel: "𝐄𝐑𝐈𝐍 ~ 𝐂𝐡𝐚ννe𝐥 ⛓️", 
   idChannel: "120363225356834044@newsletter",
   urls: {
     repo: "https://github.com/deveni0/Pomni-AI",
