@@ -1,6 +1,6 @@
 import { Client } from 'meowsab';
-import { group, access } from "./system/control.js";
-import UltraDB from "./system/UltraDB.js";
+import { group, access } from "./sys/control.js"; // تم التعديل إلى sys
+import UltraDB from "./sys/UltraDB.js";           // تم التعديل إلى sys
 import sub from './sub.js';
 
 /* =========== Client ========== */
@@ -28,7 +28,7 @@ if (!global.db) {
 const { config } = client;
 config.info = { 
   nameBot: "⚔️ ‌𝖤𝖱𝖨𝖭 𝖡𝖮𝖳 ‌‌🕊️⁩", // تم تغيير الاسم إلى إيرين مع زينة فخمة
-  nameChannel: "𝐄𝐑𝐈𝐍 ~ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ⛓️", // تحديث اسم القناة
+  nameChannel: "𝐄𝐑𝐈𝐍 ~ 𝐂𝐡𝐚𝐧𝐧𝐞ล ⛓️", // تحديث اسم القناة
   idChannel: "120363225356834044@newsletter",
   urls: {
     repo: "https://github.com/deveni0/Pomni-AI",
@@ -67,8 +67,7 @@ process.on('unhandledRejection', (err) => {
 });
 
 
-/* 
-=========== Memory Monitor ========== 
+/* =========== Memory Monitor ========== 
 
 setInterval(() => {
     const used = process.memoryUsage().rss / 1024 / 1024
