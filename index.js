@@ -1,15 +1,14 @@
 import { Client } from 'meowsab';
-import { group, access } from "./sys/control.js"; // تم التعديل إلى sys
-import UltraDB from "./sys/UltraDB.js";           // تم التعديل إلى sys
+import { group, access } from "./sys/control.js"; 
+import UltraDB from "./sys/UltraDB.js";           
 import sub from './sub.js';
 
 /* =========== Client ========== */
 const client = new Client({
-  phoneNumber: '20123456789', // Bot number
+  phoneNumber: '201227812859', // رقمك أنت الفعلي المظبوط دولياً 
   prefix: [".", "/", "!"],
   fromMe: false, 
   owners: [
-    // الأونر الوحيد للبوت
     { name: "Erin", jid: "201227812859@s.whatsapp.net" }
   ],
   settings: { noWelcome: false },
@@ -27,8 +26,8 @@ if (!global.db) {
 /* =========== Config ========== */
 const { config } = client;
 config.info = { 
-  nameBot: "⚔️ ‌𝖤𝖱𝖨𝖭 𝖡𝖮𝖳 ‌‌🕊️⁩", // تم تغيير الاسم إلى إيرين مع زينة فخمة
-  nameChannel: "𝐄𝐑𝐈𝐍 ~ 𝐂𝐡𝐚𝐧𝐧𝐞ล ⛓️", // تحديث اسم القناة
+  nameBot: "⚔️ ‌𝖤𝖱𝖨𝖭 𝖡𝖮𝖳 ‌‌🕊️⁩", 
+  nameChannel: "𝐄𝐑𝐈𝐍 ~ 𝐂𝐡𝐚𝐧𝐧𝐞ล ⛓️", 
   idChannel: "120363225356834044@newsletter",
   urls: {
     repo: "https://github.com/deveni0/Pomni-AI",
@@ -40,7 +39,6 @@ config.info = {
     author: 'Erin'
   },
   images: [
-    // قمت باستبدال صور بومني بصور فخمة تناسب اسم إيرين
     "https://i.pinimg.com/originals/3a/0d/3d/3a0d3d5272a91df721869e9e1c4df97b.jpg",
     "https://i.pinimg.com/originals/a1/d5/9c/a1d59c5d1e67cfbb4f2ee913ef4760bc.jpg",
     "https://i.pinimg.com/originals/f3/be/07/f3be07449b251b697e84cc6b186b8405.jpg"
@@ -56,7 +54,6 @@ sub(client)
   }
 }, 2000);
 
-
 /* =========== Catch Errors ========== */
 process.on('uncaughtException', (e) => {
     if (e.message.includes('rate-overlimit')) {}
@@ -65,16 +62,3 @@ process.on('uncaughtException', (e) => {
 process.on('unhandledRejection', (err) => {
     console.error('Unhandled Rejection:', err)
 });
-
-
-/* =========== Memory Monitor ========== 
-
-setInterval(() => {
-    const used = process.memoryUsage().rss / 1024 / 1024
-    if (used > 800) {
-        console.log(`🔄 Bot memory full (${used.toFixed(1)}MB), restarting...`)
-        process.exit(1) 
-    }
-}, 300_000) 
-
-*/
